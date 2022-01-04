@@ -10,26 +10,34 @@
 		<input type="submit" name="submit" value="submit">
 	</form>
 	<?php 
-	
-
 		if ($_POST) {
 			$n1 = $_POST['number1'];
 			$n2 = $_POST['number2'];
 
-			for ($i=$n1; $i <=$n2 ; $i++)
-			{
-                for ($j=1; $j < $i-1; $j++)
-                { 
-                    if($i%2==0)
-                    {
-                    	echo "$i";
-                    }
-                }
-            echo "<br>";
-            }
+			if($n1%2==0){
+      			echo $n;
+      			for($i=$n1-2;$i<=$n2;$i=$i+2)
+      			{
+					for($j=$n1-2;$j<$i;$j=$j+2)
+					{
+          				echo $i;
+        			}
+        		echo "<br>";
+      			}
+    		}
+    		else
+    		{
+      			$d = $n1 + 1;
+      			for($i=$d-2;$i<=$n2;$i=$i+2)
+      			{
+        			for($j=$d-2;$j<$i;$j=$j+2)
+        			{
+         				echo $i;
+        			}
+        		echo "<br>";
+      			}
+    		}
 		}
-		
-		
 	?>
 </body>
 </html>
